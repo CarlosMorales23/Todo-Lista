@@ -1,5 +1,8 @@
 import './style.css'
 import { App } from './src/todos/app'
+import todoStore from "./src/store/todo.store"; // como lo exporte por defecto le puedo colocar el nombre que quiera
+
+todoStore.initStore()
 
 App('#app')  
 /*  invocamos la funcion App, que importamos del app.js,  
