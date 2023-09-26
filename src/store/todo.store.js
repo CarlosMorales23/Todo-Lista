@@ -12,12 +12,14 @@ const state = {
         new Todo('Piedra del alma'),
         new Todo('Piedra del infinito'),
         new Todo('Piedra del tiempo'),
+        new Todo('Piedra del poder'),
+        new Todo('Piedra de la realidad'),
+        
     ],
 
     filter : 'all'
 
 }
-
 
 
 const initStore = ()=>{
@@ -66,7 +68,12 @@ const addTodo = ( description ) => {
  * @param {String} todoId todo identifier
  */
 const toggleTodo = ( todoId ) => {
-    throw new Error('Not implemented')
+    state.todos = state.todos.map(todo => {
+        if(todo.id = todo.Id){
+            todo.done = !todo.done; /*Basicamente cambie de true a false y viceversa, por la negación con el simbolo !*/
+        }
+        return todo; /* retorno un nuevo todo*/
+    })
 }
 
 /**
@@ -91,7 +98,7 @@ const deleteCompleted = () => {
  * @param {Filters} newFilter 
  */
 const setFilter = ( newFilter = Filters.All ) => {
-    //* se puede validad con object.keys(filters) */
+    //* TODO se puede validad con object.keys(filters) */
 
     state.filter = newFilter;
 }
