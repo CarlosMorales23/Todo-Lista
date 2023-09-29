@@ -42,7 +42,7 @@
     se crea un div, 
     Se mete el html en ese div
 
-
+    La funcion displayTodos 
 
 
 */

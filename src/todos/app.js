@@ -12,6 +12,7 @@ export const App = (elementId) => {
 
     const displayTodos = () => {
         const todos = todoStore.getTodos( todoStore.getCurrentFilter() )
+        console.log( todos )
     }
 
     //Función auto-invocada
