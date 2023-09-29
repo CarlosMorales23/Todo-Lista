@@ -1,19 +1,55 @@
 
-/** 
-1. main.js
+/*
+  * 1 index.html
 
-    Aca se van a importar todos los archivos que conforman la aplicación, 
+    Es el html raiz, tiene: 
+        *body   tiene un   div con un id="app"
+            en este div se va adjuntar el html-ccs-js  mediante el ...
 
-    para luego 
+    aca se enlaza el main.js
+
+*/
+
+/*
+* 2. main.js
+
+    Aca voy a recibir: 
+        css , todoStore.js, app.js
+
+    invoco la funcion initStore que me muestra por consola como esta el todos 
+    en ese momento
+
+    voy a invocar la función App del app.js pasandole 
+    *el argumento id del div del html.index
+    Al invocar la funcion App se trae todo el html generado en el app.html
+    que mediante la funcion se hizo un innerHtml y 
+    un append al elemntId que es ielid del div del html raiz. 
+
+*/
+
+/*
+
+* 3. app.js
+
+    !Su objetivo es la de capturar todo el javaScript y html, y renderizarlo. 
+
+    Importamos todoStore 
+    Importamos el html del app.html
 
 
- 
+
+    cuando se monta la app, se auto-invoca una función anonima,
+    se crea un div, 
+    Se mete el html en ese div
+
+
+
 
 */
 
 
 /*
-2. Hacemos el 
+*4.
 todo.model.js
 
     *Importaremos el v4 as uuid from uuid, paquete de npm. 
@@ -32,8 +68,7 @@ todo.model.js
 
 
 
-/*
-3. Hacemos el 
+/* *5. 
 todo.store.js
   
 Tendra las funciones que haran posible fabricar los  "todo"; 
