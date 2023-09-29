@@ -1,7 +1,13 @@
 //import { html } from "./app.html";  asi da error, no lo reconoce
 import todoStore from "../store/todo.store";
 import  html from "./app.html?raw"; //de esta forma lo reconoce en crudo, y no da error
+import { renderTodos } from "./use-cases";
 //TODO cuando va entre comillas {html}?
+
+const ElementIDs= {
+    TodoList : '.todo-list',
+
+}
 
 
 /**
@@ -12,7 +18,7 @@ export const App = (elementId) => {
 
     const displayTodos = () => {
         const todos = todoStore.getTodos( todoStore.getCurrentFilter() )
-        console.log( todos )
+        renderTodos( ElementIDs.TodoList, todos )
     }
 
     //Función auto-invocada

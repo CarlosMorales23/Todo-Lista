@@ -42,7 +42,15 @@
     se crea un div, 
     Se mete el html en ese div
 
-    La funcion displayTodos 
+    *La funcion displayTodos, tiene como función:
+        obtener todos los todos con la funcion getTodos
+            para esto pasa como parametro la función getCurrentFilter
+                para saber cual es el filtro actual
+        
+        * invoca la funcion renderTodos
+                recibe como argumento el id html donde rnderizar
+    
+    
 
 
 */
@@ -146,5 +154,16 @@ Tendra las funciones que haran posible fabricar los  "todo";
 
 
     *!Se esportan todas estas funciones para el multiple uso. 
+
+*/
+
+/*
+
+
+* render-todos.js
+
+    Tiene como función recibir como parametro:
+        elementId: el id del html donde se renderizara
+        todos: el arrayd e todos
 
 */
