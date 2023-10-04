@@ -40,7 +40,7 @@ export const App = (elementId) => {
         console.log(event);
         console.log( event.target.value )
 
-        if (event.KeyCode != 13) return
+        if (  event.KeyCode != 13  ) return
     })
 
 }
