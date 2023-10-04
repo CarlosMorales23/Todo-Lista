@@ -6,9 +6,9 @@ import { renderTodos } from "./use-cases";
 
 const ElementIDs= {
     TodoList : '.todo-list',
+    NewTodoInput: 'new-todo-input'
 
 }
-
 
 /**
  * 
@@ -29,5 +29,18 @@ export const App = (elementId) => {
         document.querySelector(elementId).append(app);
         displayTodos();
     })();
+
+
+    //Referencias HTML
+
+    const newDescriptionInput = document.querySelector( ElementIDs.NewTodoInput );
+
+    //Listeners
+    newDescriptionInput.addEventListener('keyup', (event) => {
+        console.log(event);
+        console.log( event.target.value )
+
+        if ( event.KeyCode != 13) return
+    })
 
 }
