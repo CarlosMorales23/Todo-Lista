@@ -18,7 +18,7 @@ export const renderTodos= ( elementId, todos=[] )=>{
 
     element.innerHTML = "";
 
-    todos.forEach( todo => {
+    todos.forEach(  todo => {
         element.append( createTodoHTML(todo) )
     });
 
