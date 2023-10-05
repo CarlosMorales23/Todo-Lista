@@ -6,7 +6,7 @@ import { renderTodos } from "./use-cases";
 
 const ElementIDs= {
     TodoList : '.todo-list',
-    NewTodoInput: 'new-todo-input'
+    NewTodoInput: '#new-todo-input'
 
 }
 
