@@ -6,8 +6,7 @@ import { renderTodos } from "./use-cases";
 
 const ElementIDs= {
     TodoList : '.todo-list',
-    NewTodoInput: '#new-todo-input'
-
+    NewTodoInput: '#new-todo-input',
 }
 
 /**
@@ -15,7 +14,6 @@ const ElementIDs= {
  * @param {String} elementId 
  */
 export const App = (elementId) => {
-
     const displayTodos = () => {
         const todos = todoStore.getTodos( todoStore.getCurrentFilter() )
         renderTodos( ElementIDs.TodoList, todos )
@@ -30,17 +28,21 @@ export const App = (elementId) => {
         displayTodos();
     })();
 
-
     //Referencias HTML
 
     const newDescriptionInput = document.querySelector( ElementIDs.NewTodoInput );
 
     //Listeners
     newDescriptionInput.addEventListener('keyup', (event) => {
-        console.log(event);
-        console.log( event.target.value )
+        console.log(event.target)
+        console.log(event.target.value)
 
-        if (  event.KeyCode != 13  ) return
+        if ( event.KeyCode !== 13 ) return;
+        if ( event.target.value.trim().length === 0) return;
+
+        todoStore.addTodo( event.target.value );
+        displayTodos();
+
+        event.target.value = ' '; 
     })
-
 }
