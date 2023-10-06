@@ -27,7 +27,7 @@ const initStore = ()=>{
  * Carga el store
  */
 const loadStore = () => {
-    throw new Error('Not implemented')
+    throw new Error(' Not implemented')
 
 }
 
