@@ -5,6 +5,7 @@ import { renderTodos } from "./use-cases";
 //TODO cuando va entre comillas {html}?
 
 const ElementIDs= {
+    clearCompletedButton : '.clear-completed',
     TodoList : '.todo-list',
     NewTodoInput: '#new-todo-input',
 }
@@ -31,6 +32,8 @@ export const App = (elementId) => {
     //Referencias HTML
     const newDescriptionInput = document.querySelector( ElementIDs.NewTodoInput );
     const todoListUL = document.querySelector( ElementIDs.TodoList );
+    const clearCompletedButton = document.querySelector( ElementIDs.clearCompletedButton );
+    
 
     //Listeners
     newDescriptionInput.addEventListener('keyup', (event) => {
@@ -58,5 +61,11 @@ export const App = (elementId) => {
         
         todoStore.deleteTodo(element.getAttribute('data-id'))
         displayTodos();
+    })
+
+    clearCompletedButton.addEventListener('click', (event)=>{
+        todoStore.deleteCompleted();
+        displayTodos()
+        
     })
 }
