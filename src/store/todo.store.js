@@ -65,7 +65,7 @@ const addTodo = ( description ) => {
  */
 const toggleTodo = ( todoId ) => {
     state.todos = state.todos.map(todo => {
-        if(todo.id = todo.Id){
+        if(todo.id === todoId){
             todo.done = !todo.done; /*Basicamente cambie de true a false y viceversa, por la negación con el simbolo !*/
         }
         return todo; /* retorno un nuevo todo*/
