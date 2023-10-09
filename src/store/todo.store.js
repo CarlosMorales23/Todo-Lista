@@ -1,9 +1,9 @@
 import { Todo } from "../todos/models/todo.model";
 
-const Filters = {
+export const Filters = {
     All: 'all',
     Completed: 'Completed',
-    Pending: 'Pending'
+    Pending: 'Pending',
 }
 
 const state = {
@@ -64,9 +64,7 @@ const getTodos = (filter= Filters.All ) => {
 const addTodo = ( description ) => {
     if (!description) throw new Error('description is required')
     state.todos.push(new Todo(description))
-
     saveStateToLocalStorage()
-
 }
 
 /**
@@ -89,9 +87,7 @@ const toggleTodo = ( todoId ) => {
  * @param {String} todoId todo identifier
  */
 const deleteTodo = ( todoId ) => {
-
     state.todos = state.todos.filter( todo => todo.id !== todoId);
-
     saveStateToLocalStorage()
 }
 
