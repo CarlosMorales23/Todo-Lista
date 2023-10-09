@@ -1,7 +1,7 @@
 //import { html } from "./app.html";  asi da error, no lo reconoce
 import todoStore, { Filters } from "../store/todo.store";
 import  html from "./app.html?raw"; //de esta forma lo reconoce en crudo, y no da error
-import { renderTodos } from "./use-cases";
+import { renderTodos, renderPending } from "./use-cases";
 //TODO cuando va entre comillas {html}?
 
 const ElementIDs= {
@@ -19,6 +19,10 @@ export const App = (elementId) => {
     const displayTodos = () => {
         const todos = todoStore.getTodos( todoStore.getCurrentFilter() )
         renderTodos( ElementIDs.TodoList, todos )
+    }
+
+    const updatePendingCount = ()=>{
+        renderPending()
     }
 
     //Función auto-invocada
