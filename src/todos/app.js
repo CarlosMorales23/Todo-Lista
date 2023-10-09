@@ -9,6 +9,7 @@ const ElementIDs= {
     TodoList : '.todo-list',
     NewTodoInput: '#new-todo-input',
     TodoFilters: '.filtro',
+    PendingCountLabel: '#pending-count',
 }
 
 /**
@@ -19,10 +20,11 @@ export const App = (elementId) => {
     const displayTodos = () => {
         const todos = todoStore.getTodos( todoStore.getCurrentFilter() )
         renderTodos( ElementIDs.TodoList, todos )
+        updatePendingCount()
     }
 
     const updatePendingCount = ()=>{
-        renderPending()
+        renderPending(ElementIDs.PendingCountLabel)
     }
 
     //Función auto-invocada

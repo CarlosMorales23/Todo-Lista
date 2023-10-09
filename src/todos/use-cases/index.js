@@ -2,5 +2,5 @@
 
 export { createTodoHTML } from "./create-todo-html";
 export { renderTodos } from "./render-todos";
-import { renderPending } from "./render-pending";
+export { renderPending } from "./render-pending";
 
